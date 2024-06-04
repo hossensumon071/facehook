@@ -514,6 +514,14 @@
       "avatar": "uploads/avatar/avatar-1708802845791-219561000.png",
       "email": "rambo@email.com",
       "bio": "I am Rambo!!!"
+    },
+    {
+      "id": "4a8a6c93-a3bc-4417-9392-5d588483f544",
+      "password": "$2b$08$/UD9dKcstiMQ.PTgpyzxceAoC4Xhm/W0Xh5TTURLUTLTnaub8yEAK",
+      "firstName": "rimu",
+      "lastName": "sumaiya",
+      "avatar": null,
+      "email": "rimu@email.com"
     }
   ]
 }

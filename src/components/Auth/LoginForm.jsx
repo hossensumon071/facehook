@@ -2,28 +2,53 @@ import { useForm } from "react-hook-form";
 import Field from "../common/Field";
 import { useNavigate } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
+import axios from "axios";
 
 const LoginForm = () => {
   const navigate = useNavigate();
-  const {setAuth} = useAuth()
+  const { setAuth } = useAuth();
   const {
     register,
     handleSubmit,
     formState: { errors },
     reset,
+    setError
   } = useForm();
 
-  const submitForm = (formData) => {
+  const submitForm = async (formData) => {
     console.log(formData);
 
-    // Make an API call 
-    // Will Return Tokens and logged in user information
-    
+    try {
+      // Make an API call
+      const response = await axios.post(
+        `${import.meta.env.VITE_SERVER_BASE_URL}/auth/login`,
+        formData
+      );
+      // Will Return Tokens and logged in user information
 
-    const user = {...formData}
-    setAuth({user})
-    navigate("/");
-    reset();
+      if (response.status === 200) {
+        const { user, token } = response.data;
+
+        if (token) {
+          const authToken = token.token;
+          const refreshToken = token.refreshToken;
+
+          console.log(
+            `login time with auth token ${authToken} and ${refreshToken}`
+          );
+
+          setAuth({ user, authToken, refreshToken });
+          navigate("/");
+          reset();
+        }
+      }
+    } catch (error) {
+      console.error(error);
+      setError("root.random", {
+        type: "random",
+        message: `User with email ${formData.email} is not found`
+      })
+    }
   };
 
   return (
@@ -67,6 +92,7 @@ const LoginForm = () => {
       >
         Login
       </button>
+      <p className="text-rose-600 text-center py-2">{errors?.root?.random?.message}</p>
     </form>
   );
 };
