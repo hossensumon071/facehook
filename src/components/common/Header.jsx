@@ -5,8 +5,10 @@ import notification from "../../assets/icons/notification.svg"
 
 import avatar1 from "../../assets/images/avatars/avatar_1.png"
 import Logout from "../Auth/Logout"
+import useAuth from "../../hooks/useAuth"
 
 const Header = () => {
+  const {auth} = useAuth()
   return (
     // <!-- Navbar -->
     <nav className="sticky top-0 z-50 border-b border-[#3F3F3F] bg-[#1E1F24] py-4">
@@ -18,20 +20,22 @@ const Header = () => {
         {/* <!-- nav links  --> */}
   
         <div className="flex items-center space-x-4">
-          <a href="./index.html" className="btn-primary">
+          <Link href="/" className="btn-primary">
             <img src={home} alt="Home" />
             Home
-          </a>
+          </Link>
           <button className="icon-btn">
             <img src={notification} alt="Notification" />
           </button>
           <Logout/>
   
-          <button className="flex-center !ml-8 gap-3">
-            <span className="text-lg font-medium lg:text-xl">Sumit</span>
+          <Link
+          to="/me"
+           className="flex-center !ml-8 gap-3">
+            <span className="text-lg font-medium lg:text-xl"> {auth?.user?.firstName} {auth?.user?.lastName}</span>
             <img className="max-h-[32px] max-w-[32px] lg:max-h-[44px] lg:max-w-[44px]"
               src={avatar1} alt="avater" />
-          </button>
+          </Link>
         </div>
         {/* <!-- nav links ends --> */}
       </div>
