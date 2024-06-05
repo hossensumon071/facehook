@@ -1,42 +1,54 @@
 import React, { useEffect, useState } from "react";
 import useAxios from "../hooks/useAxios";
 import useAuth from "../hooks/useAuth";
+import useProfile from "../hooks/useProfile";
+import { actions } from "../actions";
+import ProfileInfo from "../components/profile/ProfileInfo";
+import MyPosts from "../components/profile/MyPosts";
 
 const ProfilePage = () => {
-  const [user, setuser] = useState(null);
-  const [posts, setPosts] = useState([]);
-  const [loading, setLoading] = useState(false)
-  const [error, setError] = useState(null)
+  const { state, dispatch } = useProfile();
 
   const { api } = useAxios();
   const { auth } = useAuth();
 
   useEffect(() => {
-    setLoading(true)
+    dispatch({ type: actions.profile.DATA_FETCHING });
+
     const fetchProfile = async () => {
-      try{
-        const response = await api.get(`${import.meta.env.VITE_SERVER_BASE_URL}/profile/${auth?.user?.id}`)
-        setuser(response?.data?.user)
-        setPosts(response?.data?.posts)
-      }catch(err) {
-        console.error(err)
-        setError(err)
-      } finally {
-        setLoading(false)
+      try {
+        const response = await api.get(
+          `${import.meta.env.VITE_SERVER_BASE_URL}/profile/${auth?.user?.id}`
+        );
+
+        if (response.status === 200) {
+          dispatch({
+            type: actions.profile.DATA_FETCHED,
+            data: response.data,
+          });
+        }
+      } catch (err) {
+        console.error(err);
+        dispatch({
+          type: actions.profile.DATA_FETCH_ERROR,
+          error: err.message,
+        });
       }
-    }
+    };
 
-    fetchProfile()
-  }, [])
+    fetchProfile();
+  }, []);
 
-  if(loading) {
-    return <div>fetching Your Profile Data....</div>
+  if(state?.loading) {
+    return <div>fetching Your Profile Data....</div>;
   }
 
-  return <div>
-    <h2>Welcome, {user?.firstName} {user?.lastName}</h2>
-    <p>you Have {posts.length} posts</p>
-  </div>;
+  return (
+    <div>
+      <ProfileInfo />
+      <MyPosts />
+    </div>
+  );
 };
 
 export default ProfilePage;
