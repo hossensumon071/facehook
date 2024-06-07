@@ -8,7 +8,7 @@ const useAxios = () => {
 
   useEffect(() => {
     // add a request intercepters
-    const requestIntercept = api.interceptors.request.use(
+    const requerstIntercept = api.interceptors.request.use(
       (config) => {
         const authToken = auth?.authToken;
         if (authToken) {
@@ -22,40 +22,33 @@ const useAxios = () => {
     // add a response intercepters
     const responseIntercept = api.interceptors.response.use(
       (response) => response,
-
       async (error) => {
-        const originalRequest = error.config;
-
-        // If the error status is 401 and there is no originalRequest._retry flag,
-        // it means the token has expired and we need to refresh it
-        if (error.response.status === 401 && !originalRequest._retry) {
-          originalRequest._retry = true;
-
+        const orginalRequest = error.config;
+        if (error.response.status === 401 && !orginalRequest._retry) {
+          orginalRequest._retry = true;
           try {
-            const refreshtoken = auth?.refreshtoken;
+            const refreshToken = auth?.refreshToken;
             const response = await axios.post(
               `${import.meta.env.VITE_SERVER_BASE_URL}/auth/refresh-token`,
-              { refreshtoken }
+              { refreshToken }
             );
 
             const { token } = response.data;
-            console.log(`new Token: ${token}`);
+            console.log("new token", token);
             setAuth({ ...auth, authToken: token });
+            orginalRequest.headers.Authorization = `Bearer ${token}`;
 
-            // Retry the original request with the new token
-            originalRequest.headers.Authorization = `Bearer ${token}`;
-
-            return axios(originalRequest);
-          } catch (err) {
-            throw error;
+            return axios(orginalRequest);
+          } catch (error) {
+            throw Error(error);
           }
         }
+
         return Promise.reject(error);
       }
     );
-
     return () => {
-      api.interceptors.request.eject(requestIntercept);
+      api.interceptors.request.eject(requerstIntercept);
       api.interceptors.response.eject(responseIntercept);
     };
   }, [auth.authToken]);

@@ -1,36 +1,61 @@
 export const getDateDifferenceFromNow = (fromDate) => {
-    let difference = new Date().getTime() - new Date(fromDate).getTime();
+  const now = new Date();
+  const from = new Date(fromDate);
 
-    difference = difference / 1000;
-    const yearsDifference = Math.floor(difference / (3600 * 24 * 365));
-    difference -= yearsDifference * 3600 * 24 * 365;
-    const monthsDifference = Math.floor(difference / (3600 * 24 * 30));
-    difference -= monthsDifference * 3600 * 24 * 30;
-    const daysDifference = Math.floor(difference / (3600 * 24));
-    difference -= daysDifference * 3600 * 24;
-    const hoursDifference = Math.floor(difference / 3600);
-    difference -= hoursDifference * 3600;
-    const minutesDifference = Math.floor(difference / 60);
-    difference -= minutesDifference * 60;
-    const secondsDifference = Math.round(difference);
+  let yearDifference = now.getFullYear() - from.getFullYear();
+  let monthDifference = now.getMonth() - from.getMonth();
+  let dayDifference = now.getDate() - from.getDate();
+  let hourDifference = now.getHours() - from.getHours();
+  let minuteDifference = now.getMinutes() - from.getMinutes();
+  let secondDifference = now.getSeconds() - from.getSeconds();
 
-    let message;
+  // Adjust for negative values
+  if (secondDifference < 0) {
+    secondDifference += 60;
+    minuteDifference -= 1;
+  }
 
-    if (yearsDifference > 0) {
-        message = `${yearsDifference} year${yearsDifference > 1 ? 's' : ''}`;
-    } else if (monthsDifference > 0) {
-        message = `${monthsDifference} month${monthsDifference > 1 ? 's' : ''}`;
-    } else if (daysDifference > 0) {
-        message = `${daysDifference} day${daysDifference > 1 ? 's' : ''}`;
-    } else if (hoursDifference > 0) {
-        message = `${hoursDifference} hour${hoursDifference > 1 ? 's' : ''}`;
-    } else if (minutesDifference > 0) {
-        message = `${minutesDifference} minute${minutesDifference > 1 ? 's' : ''}`;
-    } else if (secondsDifference > 0) {
-        message = `${secondsDifference} second${secondsDifference > 1 ? 's' : ''}`;
-    } else {
-        message = 'just now';
-    }
+  if (minuteDifference < 0) {
+    minuteDifference += 60;
+    hourDifference -= 1;
+  }
 
-    return message + ' ago';
+  if (hourDifference < 0) {
+    hourDifference += 24;
+    dayDifference -= 1;
+  }
+
+  if (dayDifference < 0) {
+    // Get the number of days in the previous month
+    const previousMonth = new Date(
+      now.getFullYear(),
+      now.getMonth(),
+      0
+    ).getDate();
+    dayDifference += previousMonth;
+    monthDifference -= 1;
+  }
+
+  if (monthDifference < 0) {
+    monthDifference += 12;
+    yearDifference -= 1;
+  }
+
+  let message = "";
+
+  if (yearDifference > 0) {
+    message = `${yearDifference} year${yearDifference > 1 ? "s" : ""}`;
+  } else if (monthDifference > 0) {
+    message = `${monthDifference} month${monthDifference > 1 ? "s" : ""}`;
+  } else if (dayDifference > 0) {
+    message = `${dayDifference} day${dayDifference > 1 ? "s" : ""}`;
+  } else if (hourDifference > 0) {
+    message = `${hourDifference} hour${hourDifference > 1 ? "s" : ""}`;
+  } else if (minuteDifference > 0) {
+    message = `${minuteDifference} minute${minuteDifference > 1 ? "s" : ""}`;
+  } else if (secondDifference > 0) {
+    message = `${secondDifference} second${secondDifference > 1 ? "s" : ""}`;
+  }
+
+  return message;
 };

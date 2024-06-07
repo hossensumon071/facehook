@@ -109,9 +109,7 @@
           }
         }
       ],
-      "likes": [
-        "6fd3ed42-2275-4d5f-a436-e5a3bf586c56"
-      ],
+      "likes": [],
       "createAt": "2024-02-24T12:18:21.686Z"
     },
     {
@@ -219,8 +217,7 @@
         "ea168626-058e-49dd-b23c-3000e7bd0172",
         "8fc0f0d6-396a-4ef4-922b-27ef5b4e8526",
         "1aeef0f0-77ba-456b-8b5b-d4145a9b5410",
-        "a0e37f88-ffc7-4fc7-952e-81370ff96269",
-        "6fd3ed42-2275-4d5f-a436-e5a3bf586c56"
+        "a0e37f88-ffc7-4fc7-952e-81370ff96269"
       ],
       "createAt": "2024-02-24T12:21:27.644Z"
     },
@@ -235,7 +232,9 @@
         "avatar": "uploads/avatar/avatar-1708770640883-148182382.png"
       },
       "comments": [],
-      "likes": [],
+      "likes": [
+        "6fd3ed42-2275-4d5f-a436-e5a3bf586c56"
+      ],
       "createAt": "2024-02-24T12:29:59.028Z"
     },
     {
@@ -333,7 +332,9 @@
         "avatar": "uploads/avatar/avatar-1708789609571-36760872.jpeg"
       },
       "comments": [],
-      "likes": [],
+      "likes": [
+        "6fd3ed42-2275-4d5f-a436-e5a3bf586c56"
+      ],
       "createAt": "2024-02-25T06:36:33.889Z"
     },
     {
@@ -347,7 +348,9 @@
         "avatar": "uploads/avatar/avatar-1708789609571-36760872.jpeg"
       },
       "comments": [],
-      "likes": [],
+      "likes": [
+        "6fd3ed42-2275-4d5f-a436-e5a3bf586c56"
+      ],
       "createAt": "2024-02-25T06:49:49.663Z"
     },
     {
@@ -361,7 +364,9 @@
         "avatar": "uploads/avatar/avatar-1708789609571-36760872.jpeg"
       },
       "comments": [],
-      "likes": [],
+      "likes": [
+        "6fd3ed42-2275-4d5f-a436-e5a3bf586c56"
+      ],
       "createAt": "2024-02-25T06:50:11.588Z"
     },
     {
@@ -375,7 +380,9 @@
         "avatar": "uploads/avatar/avatar-1708789609571-36760872.jpeg"
       },
       "comments": [],
-      "likes": [],
+      "likes": [
+        "6fd3ed42-2275-4d5f-a436-e5a3bf586c56"
+      ],
       "createAt": "2024-02-25T06:57:46.023Z"
     },
     {
@@ -430,7 +437,9 @@
         "avatar": "uploads/avatar/avatar-1708789609571-36760872.jpeg"
       },
       "comments": [],
-      "likes": [],
+      "likes": [
+        "6fd3ed42-2275-4d5f-a436-e5a3bf586c56"
+      ],
       "createAt": "2024-02-25T07:02:51.676Z"
     },
     {
@@ -444,7 +453,9 @@
         "avatar": "uploads/avatar/avatar-1708789609571-36760872.jpeg"
       },
       "comments": [],
-      "likes": [],
+      "likes": [
+        "6fd3ed42-2275-4d5f-a436-e5a3bf586c56"
+      ],
       "createAt": "2024-02-25T07:04:19.291Z"
     },
     {
@@ -469,9 +480,9 @@
       "password": "$2b$08$t5Aar/0hgHTMdCeLtn3KhOlWDVIAHcFUTkRPeWASPhbYAea5kxKvW",
       "firstName": "Saad",
       "lastName": "Hasan",
-      "avatar": "uploads/avatar/avatar-1717600295430-439909799.png",
+      "avatar": "uploads/avatar/avatar-1717726112853-463261334.png",
       "email": "saadh392@mail.com",
-      "bio": "I love sumit saha "
+      "bio": "Saad is an excellent member of LWS who keeps himself updated with technology and stays relevant. He is a tech enthusiast and does not hesitate to help developers in need."
     },
     {
       "id": "1aeef0f0-77ba-456b-8b5b-d4145a9b5410",
@@ -479,17 +490,16 @@
       "firstName": "Sumit",
       "lastName": "Saha",
       "avatar": "uploads/avatar/avatar-1708777668890-622477379.png",
-      "email": "sumitsaha@learnwithsumit.com",
-      "bio": "Sumit is an excellent member of LWS who keeps himself updated with technology and stays relevant. He is a tech enthusiast and does not hesitate to help developers in need."
+      "email": "sumitsaha@learnwithsumit.com"
     },
     {
       "id": "8fc0f0d6-396a-4ef4-922b-27ef5b4e8526",
       "password": "$2b$08$XLgmuBqthkljtrVqSXdnk.OotUpoGnArVSrn6CHHt/upkUGTX7N0C",
       "firstName": "Tapas",
       "lastName": "Adhikary",
-      "avatar": "uploads/avatar/avatar-1708770640883-148182382.png",
+      "avatar": "uploads/avatar/avatar-1717580704668-95491404.png",
       "email": "atapas@email.com",
-      "bio": "A Ghost"
+      "bio": "A Ghost 🤶🤶"
     },
     {
       "id": "ea168626-058e-49dd-b23c-3000e7bd0172",
@@ -517,12 +527,76 @@
       "bio": "I am Rambo!!!"
     },
     {
-      "id": "4a8a6c93-a3bc-4417-9392-5d588483f544",
-      "password": "$2b$08$/UD9dKcstiMQ.PTgpyzxceAoC4Xhm/W0Xh5TTURLUTLTnaub8yEAK",
-      "firstName": "rimu",
-      "lastName": "sumaiya",
+      "id": "e85def6d-7b46-4771-8b16-3027ce19f9ad",
+      "password": "$2b$08$dpT84K9Vt2LBZ.SlUZDAoOPBxPIUV5EPWnVDNl7lJDAJmaqscVU4a",
+      "firstName": "Tapas",
+      "lastName": "Adhikary",
       "avatar": null,
-      "email": "rimu@email.com"
+      "email": "atapash@email.com"
+    },
+    {
+      "id": "827a5805-63cd-4091-b153-2934d27939e4",
+      "password": "$2b$08$u32ulnmVXVTJKRLwkJ8..O/hioDAEIA19cb2KGN/bUPVlyb09eB6q",
+      "firstName": "anam",
+      "lastName": "Jaco",
+      "avatar": null,
+      "email": "anamjaco@gmail.com"
+    },
+    {
+      "id": "564ed6f6-5576-4dca-af43-b48ce78ab874",
+      "password": "$2b$08$APhhSKtRfpWJam6FOn5.m.rKnRoG1lvgfi7aOI3v3iPBMRfr1aJqC",
+      "firstName": "jhon",
+      "lastName": "Deo",
+      "avatar": null,
+      "email": "express@js.dev"
+    },
+    {
+      "id": "aac61417-797e-4a7c-b9ce-2f4e642fee1c",
+      "password": "$2b$08$2Enh0gCaP9IUprhOPdTAI.WCEUQ1SxtNb0P8JNhbqODN5Zys568NG",
+      "firstName": "amir",
+      "lastName": "sumon",
+      "avatar": null,
+      "email": "amir@gmail.com"
+    },
+    {
+      "id": "7b7ca00c-e12c-407e-850d-c71f177e33dc",
+      "password": "$2b$08$NWSpx673TRfRH4ffUJSkpubomWKPG0TWJq/v7O8ADWgPKgoPwVZGq",
+      "firstName": "Susanhghg",
+      "lastName": "Jordona",
+      "avatar": null,
+      "email": "shanayajhn@gmail.com"
+    },
+    {
+      "id": "74d723e8-a677-4138-a616-1d4af1893680",
+      "password": "$2b$08$upsBWRul4rz32t1H3EPpp.aEZXyGqpbOkRfvhCVUj2urkWLC2EDQG",
+      "firstName": "amir",
+      "lastName": "d",
+      "avatar": null,
+      "email": "ZXzxZX@gmail.com"
+    },
+    {
+      "id": "20479f6b-55e3-4528-9932-0cb060a2388e",
+      "password": "$2b$08$M.0KYQCzbKxnAPtd51hVLeaaiogoCaJD9hXyfhkVc3jREQvfwnj8m",
+      "firstName": "moniha begum",
+      "lastName": "adad",
+      "avatar": null,
+      "email": "sumonhossen0000@gmail.com"
+    },
+    {
+      "id": "fb0de501-a76d-45c0-b27b-e9f93ed396b1",
+      "password": "$2b$08$ZCqxeSUpRWOM16lMBtKPgemtfG1B5ewryZVcsNa8zb5F6CHEeihPK",
+      "firstName": "amir",
+      "lastName": "sumon",
+      "avatar": "uploads/avatar/avatar-1717686692195-537667922.png",
+      "email": "hossensumon071@gmail.com"
+    },
+    {
+      "id": "551ceb28-9981-4d90-8fcd-7933fea2e234",
+      "password": "$2b$08$y4Hv0xtFTk3ea76nc80CzOLBJc3JHC1o5sAVm7SgpAXQ7QPhsZPUm",
+      "firstName": "john",
+      "lastName": "doe",
+      "avatar": null,
+      "email": "jog@express.dev"
     }
   ]
 }

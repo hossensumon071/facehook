@@ -1,23 +1,30 @@
-import React from "react"
+import React from "react";
 
-
-const Field = ({label, children, htmlFor, error}) => {
-    const id = htmlFor || getChildId(children)
+const Field = ({ label, children, htmlFor, error }) => {
+  const id = htmlFor || getChildId(children);
   return (
-    <div className="form-control">
-      {label && <label className="auth-label" htmlFor={id}>{label}</label>}
+    <div className='form-control'>
+      {label && (
+        <label className='auth-label' htmlFor={id}>
+          {label}
+        </label>
+      )}
       {children}
-      {error && <div role="alert" className="text-red-600">{error.message}</div>}
+      {error && (
+        <div role='alert' className='text-red-600'>
+          {error.message}
+        </div>
+      )}
     </div>
-  )
-}
+  );
+};
 
-export default Field
-
+export default Field;
 
 const getChildId = (children) => {
-    const child = React.Children.only(children)
-    if("id" in child?.props){
-        return child.props.id
-    }
-}
+  const child = React.Children.only(children);
+
+  if ("id" in child?.props) {
+    return child.props.id;
+  }
+};

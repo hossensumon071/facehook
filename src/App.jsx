@@ -10,13 +10,15 @@ function App() {
   return (
     <>
       <Routes>
-        <Route element={<PrivateRoute/>}>
-          <Route element={<HomePage />} path="/" exact />
-          <Route element={<ProfilePage />} path="/me" />
+        <Route element={<PrivateRoute />}>
+          <Route element={<HomePage />} path='/' exact />
+          <Route element={<ProfilePage />} path='/me' />
         </Route>
-        <Route element={<LoginPage />} path="/login" />
-        <Route element={<RegistrationPage />} path="/register" />
-        <Route element={<NotFoundPage />} path="*" />
+        <Route element={<LoginPage />} path='/login' />
+
+        <Route element={<RegistrationPage />} path='/register' />
+
+        <Route element={<NotFoundPage />} path='*' />
       </Routes>
     </>
   );
